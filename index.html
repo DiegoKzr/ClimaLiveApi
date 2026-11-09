@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClimaLive</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">☀</span>
+        <span>Clima<span class="brand-light">Live</span></span>
+      </div>
+      <span class="live-label"><span class="live-dot"></span> CLIMA ACTUAL</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">CONSULTA EL ESTADO DEL TIEMPO</p>
+      <h1>El clima de tu ciudad.</h1>
+      <p class="subtitle">Escribe una ciudad para consultar su temperatura y el viento.</p>
+    </section>
+
+    <form id="search-form" class="search" autocomplete="off">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="city-input" type="search" placeholder="Escribe una ciudad" aria-label="Nombre de la ciudad">
+      <button type="submit" id="search-button">Buscar</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite">Consultando el clima...</p>
+
+    <section class="weather-card" aria-label="Información del clima">
+      <div class="weather-main">
+        <div>
+          <p class="card-kicker">CLIMA ACTUAL</p>
+          <h2 id="city-name">Sincelejo, Colombia</h2>
+          <div class="temperature">
+            <span id="temperature">--</span><span class="degree">°</span>
+          </div>
+          <p id="condition" class="condition">Cargando...</p>
+        </div>
+        <div class="weather-symbol" id="weather-icon" aria-hidden="true">🌤️</div>
+      </div>
+
+      <div class="weather-details">
+        <article class="detail">
+          <span class="detail-icon" aria-hidden="true">💨</span>
+          <div>
+            <p>Velocidad del viento</p>
+            <strong id="wind">-- km/h</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <span>Información consultada en <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
+    </footer>
+  </main>
+</body>
+</html>
